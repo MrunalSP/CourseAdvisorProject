@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Jumbotron Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="jumbotron.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+function drag(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+    //document.getElementById("demo").innerHTML = "Started to drag the p element";
+    console.log("in drag");
+    console.log(event);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+    //console.log("in allow drop");
+    //console.log(event);
+}
+
+function drop(event) {
+    /*
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    console.log(data);
+    //event.target.appendChild(document.getElementById(data));
+    event.target.innerHTML = data;
+    //document.getElementById("demo").innerHTML = "The p element was dropped";
+    console.log("in drop event - yay!!");
+    console.log(event);
+    */
+  var data = event.dataTransfer.getData("Text");
+    console.log(data);
+  /* If you use DOM manipulation functions, their default behaviour it not to 
+     copy but to alter and move elements. By appending a ".cloneNode(true)", 
+     you will not move the original element, but create a copy. */
+  var nodeCopy = document.getElementById(data).cloneNode(true);
+  nodeCopy.id = "newId"; /* We cannot use the same ID */
+  //ev.target.appendChild(nodeCopy);
+    event.target.innerHTML = nodeCopy.innerHTML;
+}
+</script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div>
+                    <h1 id="title_3"><center>iAdvise</center></h1>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+</div>
+                        <div class="form-group">
+</div>
+                    </form>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </nav>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>SEM 1</h2>
+                    <p><table class="table table-striped">
+                            <tr>
+                                <td id="sem1_sub1" title="Credits : 3
+Prof: Igor Faynberg
+Theory:Practical ratio - 80/20
+                                           
+Click to view details about this Course." ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS524syl.pdf" target="_blank"><h4>CS-524 Cloud Computing</h4></a>
+                                </td>
+                                <td>M 6.30-9.00 pm</td>
+                            </tr>
+                            <tr>
+                                <td id="sem1_sub2" title="Credits : 3
+Prof: Dehnad K 
+Theory:Practical ratio - 10/90
+                                           
+Click to view details about this Course." ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS513syl.pdf" target="_blank"><h4>CS-513 Data Mining</h4></a>
+                                </td>
+                                <td>W 4.30-7.00 pm</td>
+                            </tr>
+                            <tr>
+                                <td id="sem1_sub3" title="Credits : 4
+Prof: Pfeffer D
+Theory:Practical ratio - 0/100
+                                           
+Click to view details about this Course." ndrop="drop(event)" ondragover="allowDrop(event)">
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS570syl.pdf" target="_blank"><h4>CS-570 Intro to C++</h4></a>
+                                </td>
+                                <td>M 3.30-5.00 pm</td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="col-md-4">
+                    <h2>SEM 2</h2>
+                    <p><table class="table table-striped">
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS561syl.pdf" target="_blank"><h4>CS-561 Databases 1</h4></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS561syl.pdfCS-512 Databases - 1"><h4>CS-546 Web Programming</h4></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS501syl.pdf" target="_blank"><h4>CS-501 Java Programming</h4></a>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="col-md-4">
+                    <h2>SEM 3</h2>
+                    <p><table class="table table-striped">
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS501syl.pdf" target="_blank"><h4>CS-511 Concurrent Programming</h4></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS501syl.pdf" target="_blank"><h4>CS-521 TCP/IP Networking</h4></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS501syl.pdf" target="_blank"><h4>CS-521 TCP/IP Networking</h4></a>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <table class="table table-striped"> 
+            <thead> 
+                <tr> 
+                    <th><h4><b>Course No.</b></h4></th> 
+                    <th><h4><b>Type</b></h4></th> 
+                    <th><h4><b>Course Name</b></h4></th> 
+                    <th><h4><b>Professor Name</b></h4></th> 
+                    <th><h4><b>Course Popularity</b></h4></th>
+                    <th><h4><b>Pre-requisites</b></h4></th>
+                </tr>                 
+            </thead>             
+            <tbody> 
+                <tr> 
+                    <td><h4>CS 600</h4></td> 
+                    <td><h4>CORE</h4></td> 
+                    <td id="sub1" draggable="true" ondragstart="drag(event)">
+                        <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS600syl.pdf" target="_blank"><h4>Advanced Algorithms</h4></a>
+                    </td>                     
+                    <td><h4>Prof. Smith</h4></td> 
+                    <td title="As per data collected last year 
+30 students out of 100 gave this 
+course a 5 star rating."><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></td> 
+                    <td><h4><a href="https://web.stevens.edu/academic_files/courses/syllabus/CS570syl.pdf" target="_blank">CS-570</a></h4></td> 
+                </tr>                 
+                <tr> 
+                    <td><h4>CS 555</h4></td> 
+                    <td><h4>ELECTIVE</h4></td> 
+                    <td id="sub2" draggable="true" ondragstart="drag(event)">
+                        <a href="https://web.stevens.edu/academic_files/courses/syllabus/SSW555_Syllabus[1].pdf" target="_blank"><h4>Agile</h4></a>
+                    </td>                     
+                    <td><h4>Prof. Luke</h4></td> 
+                    <td title="As per data collected last year 
+60 students out of 100 gave this 
+course a 5 star rating."><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></td> 
+                    <td><h4> - </h4></td> 
+                </tr>                 
+                <tr> 
+                    <td><h4>CS 545</h4></td> 
+                    <td><h4>CORE</h4></td> 
+                    <td id="sub3" draggable="true" ondragstart="drag(event)">
+                        <a href="https://web.stevens.edu/academic_files/courses/syllabus/CS545syl.pdf" target="_blank"><h4>HCI</h4></a>
+                    </td>                     
+                    <td><h4>Prof. Vesonder</h4></td> 
+                    <td title="As per data collected last year 
+100 students out of 100 gave this 
+course a 5 star rating."><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td> 
+                    <td><h4><a href="https://web.stevens.edu/academic_files/courses/syllabus/CS570syl.pdf" target="_blank">CS-570</a></h4></td> 
+                </tr>                 
+            </tbody>
+        </table>         
+        <hr>
+        <footer>
+            <p>&copy; iAdvise 2016</p>
+        </footer>
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>
